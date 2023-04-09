@@ -71,7 +71,7 @@ public class EmployeesHandling {
                 highestSalary = salary;
             }
         }
-        return "Największa wypłata: " + highestSalary;
+        return "Maksymalna wypłata: " + highestSalary;
     }
 
     private String findLowestSalary() {
@@ -82,7 +82,7 @@ public class EmployeesHandling {
                 lowestSalary = salary;
             }
         }
-        return "Najmniejsza wypłata: " + lowestSalary;
+        return "Minimalna wypłata: " + lowestSalary;
     }
 
     private String calculateAverageSalary() {
