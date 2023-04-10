@@ -1,22 +1,20 @@
 import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
+
+        FileHandling fileHandling = new FileHandling();
+        EmployeesHandling employeesHandling = new EmployeesHandling();
 
         File file = new File("employees.csv");
+        File stats = new File("stats.txt");
+        String[] arrayOfStringsEmployeesInfo = fileHandling.fileToArray(file);
 
-        if (file.exists()) {
-            File stats = new File("stats.txt");
-            stats.createNewFile();
+        CompanyStats companyStats = employeesHandling.createStats(arrayOfStringsEmployeesInfo);
 
-//            FileWriter fileWriter = new FileWriter(stats);
-//            fileWriter.write("Średnia wypłata: 5000");
-//
-//            fileWriter.close();
-        }
+        companyStats.printInfo();
 
+        fileHandling.writeToFile(stats, companyStats.getInfo());
     }
 }
