@@ -65,7 +65,7 @@ public class CompanyStats {
         int tempLowestSalary = employees[0].getSalary();
         for (Employee employee : employees) {
             int salary = employee.getSalary();
-            if (salary > tempLowestSalary) {
+            if (salary < tempLowestSalary) {
                 tempLowestSalary = salary;
             }
         }
