@@ -1,6 +1,6 @@
 public class DepartmentStatitistcs {
-    String department;
-    int numberOfEmployees;
+    private final String department;
+    private int numberOfEmployees;
 
     public DepartmentStatitistcs(String department, int numberOfEmployees) {
         this.department = department;

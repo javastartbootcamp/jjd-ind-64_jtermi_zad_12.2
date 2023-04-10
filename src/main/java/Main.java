@@ -9,15 +9,12 @@ public class Main {
 
         File file = new File("employees.csv");
         File stats = new File("stats.txt");
-
         String[] arrayOfStringsEmployeesInfo = fileHandling.fileToArray(file);
 
-        employeesHandling.createEmployeesTable(arrayOfStringsEmployeesInfo);
-        String employeesStats = employeesHandling.createStats();
+        CompanyStats companyStats = employeesHandling.createStats(arrayOfStringsEmployeesInfo);
 
-        System.out.println(employeesStats);
+        companyStats.printInfo();
 
-        fileHandling.writeToFile(stats, employeesStats);
-
+        fileHandling.writeToFile(stats, companyStats.getInfo());
     }
 }

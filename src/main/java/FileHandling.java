@@ -9,9 +9,7 @@ public class FileHandling {
         int lines = countLines(file);
         String[] arrayOfLines = new String[lines];
 
-        try (
-                Scanner scanner = new Scanner(file)
-                ) {
+        try (Scanner scanner = new Scanner(file)) {
             for (int i = 0; i < arrayOfLines.length; i++) {
                 arrayOfLines[i] = scanner.nextLine();
             }
@@ -38,9 +36,7 @@ public class FileHandling {
 
     public void writeToFile(File file, String dataToWrite) {
 
-        try (
-                FileWriter fileWriter = new FileWriter(file)
-                ) {
+        try (FileWriter fileWriter = new FileWriter(file)) {
             file.createNewFile();
             fileWriter.write(dataToWrite);
         } catch (IOException e) {
